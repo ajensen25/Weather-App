@@ -1,0 +1,98 @@
+/* 'Open Sans', serif */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300..800&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Open Sans', serif;
+}
+
+:root {
+  --primary-color: rgb(50, 124, 199);
+  --secondary-color: rgb(105, 104, 104);
+  --background-color: rgb(221, 238, 255);
+
+  --white-color: #fff;
+  --black-color: #000;
+  --grey-color: rgb(160, 160, 160);
+}
+
+body {
+  height: 100vh;
+}
+
+body header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: var(--primary-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+header h2 {
+  color: var(--white-color);
+  padding: 16px 0;
+}
+
+body main {
+  margin-top: 65px;
+  display: flex;
+  padding: 25px;
+  background: var(--background-color);
+}
+
+main .main-left {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 30%;
+}
+.main-left p {
+  font-weight: 700;
+  font-size: 1.1rem;
+}
+.main-left input {
+  width: 100%;
+  font-size: 0.85rem;
+  padding: 8px 10px;
+  outline: none;
+  color: var(--black-color);
+  border: none;
+  border-radius: 0.3rem;
+  box-shadow: 0 0 5px rgba(0,0,0,0.1);
+}
+.main-left button {
+  background: var(--primary-color);
+  border: none;
+  border-radius: 0.3rem;
+  color: var(--white-color);
+  font-size: 0.85rem;
+  padding: 10px;
+  cursor: pointer;
+}
+.main-left .search-button {
+  margin-bottom: 10px;
+}
+.main-left .location-button {
+  background: var(--secondary-color);
+  margin-top: 10px;
+}
+.main-left .seperator {
+  height: 1px;
+  width: 100%;
+  background: var(--grey-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.main-left .seperator::before {
+  content: "or";
+  color: var(--grey-color);
+  font-size: 1.1rem;
+  padding: 0 16px;
+  background: var(--background-color);
+}
