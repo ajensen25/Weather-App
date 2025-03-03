@@ -41,7 +41,9 @@ body main {
   margin-top: 65px;
   display: flex;
   padding: 25px;
+  gap: 25px;
   background: var(--background-color);
+  height: calc(100vh - 65px);
 }
 
 main .main-left {
@@ -95,4 +97,55 @@ main .main-left {
   font-size: 1.1rem;
   padding: 0 16px;
   background: var(--background-color);
+}
+
+main .main-right {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 70%;
+}
+
+.main-right .main-weather-wrapper {
+  background: var(--primary-color);
+  border-radius: 0.5rem;
+  width: 100%;
+  padding: 16px;
+  color: var(--white-color);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.main-weather-wrapper h1 {
+  font-size: 1.8rem;
+}
+.main-weather-wrapper p {
+  font-size: 0.9rem;
+}
+
+.main-right .forecast-weather-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.forecast-weather-container .forecast-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.forecast-weather-container .forecast-cell {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  background: var(--secondary-color);
+  border-radius: 0.5rem;
+  padding: 16px 50px 16px 16px;
+  color: var(--white-color);
+}
+.forecast-cell h2 {
+  font-size: 1.4rem;
+}
+.forecast-cell p {
+  font-size: 0.9rem;
 }
