@@ -10,16 +10,19 @@
 
 :root {
   --primary-color: rgb(50, 124, 199);
-  --secondary-color: rgb(105, 104, 104);
+  --secondary-color: rgb(103, 97, 101);
   --background-color: rgb(221, 238, 255);
 
   --white-color: #fff;
   --black-color: #000;
   --grey-color: rgb(160, 160, 160);
+
+  --mobile-breakpoint: 768px;
 }
 
 body {
   height: 100vh;
+  background: var(--background-color);
 }
 
 body header {
@@ -42,8 +45,6 @@ body main {
   display: flex;
   padding: 25px;
   gap: 25px;
-  background: var(--background-color);
-  height: calc(100vh - 65px);
 }
 
 main .main-left {
@@ -113,8 +114,12 @@ main .main-right {
   padding: 16px;
   color: var(--white-color);
   display: flex;
+  justify-content: space-between;
+}
+.main-weather-wrapper .weather-wrapper-left {
+  display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 10px;
 }
 .main-weather-wrapper h1 {
   font-size: 1.8rem;
@@ -122,15 +127,19 @@ main .main-right {
 .main-weather-wrapper p {
   font-size: 0.9rem;
 }
+.main-weather-wrapper .weather-wrapper-right {
+  padding: 0 30px 20px 0;
+
+}
 
 .main-right .forecast-weather-container {
   display: flex;
   flex-direction: column;
   gap: 20px;
 }
-.forecast-weather-container .forecast-wrapper {
-  display: flex;
-  flex-wrap: wrap;
+.forecast-weather-container .forecast-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
   gap: 20px;
 }
 
@@ -140,12 +149,29 @@ main .main-right {
   gap: 12px;
   background: var(--secondary-color);
   border-radius: 0.5rem;
-  padding: 16px 50px 16px 16px;
+  padding: 16px;
   color: var(--white-color);
+  min-width: 130px;
 }
 .forecast-cell h2 {
-  font-size: 1.4rem;
+  font-size: 1rem;
+}
+.forecast-cell img {
+  width: 80px;
+  height: 80px;
 }
 .forecast-cell p {
   font-size: 0.9rem;
+}
+
+@media screen and (width <= 768px) {
+  body main {
+    flex-direction: column;
+  }
+  main .main-left {
+    width: 100%;
+  }
+  main .main-right {
+    width: 100%;
+  }
 }
